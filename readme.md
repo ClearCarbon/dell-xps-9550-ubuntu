@@ -32,11 +32,21 @@ between the nVidia and Intel cards.
 * `sudo apt-get install prime-indicator`
 
 
+## Update BIOS
+
+This seems to help with a few little niggles, including multi screen use.
+
+* Download the latest BIOS update from (Dell)[http://www.dell.com/support/home/us/en/19/product-support/product/xps-15-9550-laptop/drivers]
+* Run `sudo cp <bios.exe> /boot/efi`
+* Reboot your machine pressing F12 to enter boot selection
+* Select the BIOS Update option
+* Select the bios.exe you copied earlier
+* Follow instructions.
+
 ## Fixing Palm Detection
 
 Warning: The below fixes palm detection however the mouse may freeze during use or after
 a sleep.
-
 
 * Open `/etc/modprobe.d/blacklist.conf`
 * Add the line `blacklist i2c_designware-platform`
@@ -55,5 +65,6 @@ by disabling the touchpad for 300ms while typing. This will not disable a mouse 
 * Palm rejection still not perfect, seems to detect palm more on the edges of the trackpad.
 * Wired networking doesn't work after a suspsend or reconnect of the dongle.
 * HDMI on the dongle won't work at anything other than low resolutions.
+* USB-C to Thunderbolt doesn't work at all.
 * Switching Audio Devices doesn't always seem to work well (devices without sound).
 * Have to restart X to switch to nvidia graphics.
